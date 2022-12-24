@@ -1,0 +1,24 @@
+@import '../styles/variables';
+
+.Layout {
+    padding: 100px 100px 0 100px;
+    display: flex;
+    gap: 100px;
+    justify-content: space-evenly;
+    transition: all 0.5s ease-in-out;
+
+    @include lg {
+
+        padding: 50px 50px 0 50px;
+        gap: 50px
+    }
+
+    @include md {
+        flex-wrap: wrap;
+    }
+
+    @include sm {
+        padding: 10px 10px 0 10px;
+        gap: 30px
+    }
+}

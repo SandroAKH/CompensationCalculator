@@ -1,0 +1,167 @@
+@import '../../styles/variables';
+
+h1,
+h2 {
+    color: $info-text;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.Info {
+    .info-text-section {
+        div {
+
+            &:first-child {
+                p {
+                    max-width: 660px;
+                }
+            }
+
+            &:nth-child(2) {
+                padding-top: 40px;
+                display: flex;
+                gap: 40px;
+
+                p {
+                    max-width: 380px;
+
+                }
+
+                .info-image {
+                    background-image: url("../../assets/info/info.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 240px;
+                    height: 180px;
+
+                    @include xs {
+                        width: 180px
+                    }
+                }
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 50px;
+
+            @include sm {
+                line-height: 45px;
+
+                font-size: 24px;
+            }
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 35px;
+            max-width: 380px;
+
+            @include sm {
+                line-height: 30px;
+
+                font-size: 19px;
+            }
+        }
+
+        span {
+            text-decoration: underline;
+            color: $text-red;
+            text-underline-offset: 0.1em;
+            padding: 0 5px 0 5px;
+
+        }
+
+        p {
+            color: $info-text;
+            font-size: 18px;
+            padding-top: 20px;
+            line-height: 35px;
+
+            @include sm {
+
+                line-height: 20px;
+                font-size: 11px;
+            }
+        }
+    }
+
+    .acordion-section {
+        margin-top: 20px;
+
+        .MuiPaper-root {
+            border: none !important;
+            background: transparent !important;
+
+            .MuiButtonBase-root {
+                background-color: transparent;
+                padding: 0 !important;
+                min-height: 35px;
+
+                .MuiAccordionSummary-content {
+                    margin: 0;
+                }
+            }
+
+            .list-item,
+            .acordion-name {
+                color: $info-text;
+                font-size: 18px;
+                height: 35px;
+                line-height: 35px;
+                transition: all 0.5s ease-in-out;
+
+                @include sm {
+                    line-height: 20px;
+                    font-size: 11px;
+                }
+            }
+
+            .list-item {
+                display: flex;
+
+            }
+
+            ul {
+                margin-left: 28px;
+
+            }
+        }
+
+        .acordion-logo {
+            background-image: url("../../assets/info/Bullet.png");
+            width: 16px;
+            height: 4px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 15px;
+            margin-right: 9px;
+
+            @include sm {
+                margin-top: 8px;
+                width: 14px;
+
+            }
+
+        }
+
+        .list-item-logo {
+            background-image: url("../../assets/info/BulletLight.png");
+            width: 16px;
+            height: 4px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 15px;
+
+            margin-right: 9px;
+
+            @include sm {
+                width: 14px;
+                margin-top: 8px;
+            }
+
+        }
+    }
+
+
+}

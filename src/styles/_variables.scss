@@ -1,0 +1,44 @@
+// Body
+$body-bg: linear-gradient(90deg, #2B303A 0%, #3F4756 100%);
+
+// Colors
+$calculator-bg: #FFFFFF;
+$calculator-dark: #111317;
+$calculator-light: #7A818E;
+$input-border: #D3DAE8;
+$info-text: #FFFFFF;
+$border: #E9EDF4;
+$income-input-border: linear-gradient(90deg, #D3DAE8 28%, #A7B7D8 100%) 1;
+$text-red: #E1261C;
+
+//breakpoints
+@mixin xs {
+    @media (max-width: 440px) {
+        @content;
+    }
+}
+
+
+@mixin sm {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 1040px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: 1700px) {
+        @content;
+    }
+}
