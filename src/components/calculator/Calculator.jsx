@@ -95,7 +95,6 @@ function Calculator() {
     setNet(employerDays + insuranceDays);
     setTotal(employerDays * dailyIncome + insuranceDays * dailyIncome);
   };
-  // useEffect(() => {}, [net, calculateInsuranceDays]);
   return (
     <div className="Calculator">
       <Formik
