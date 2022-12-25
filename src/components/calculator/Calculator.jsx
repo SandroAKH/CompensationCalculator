@@ -13,16 +13,11 @@ const EMPLOYER_LEAVE = 5;
 function Calculator() {
   const [calculateInsuranceDays, setCalculateInsuranceDays] = useState(0);
   const [calculaEmployerDays, setCalculaEmployerDays] = useState(0);
-  const [employerComp, seEmployerComp] = useState(0);
+  const [employerComp, setEmployerComp] = useState(0);
   const [insuranceComp, setInsuranceComp] = useState(0);
   const [dailyIncome, setDailyIncome] = useState(0);
   const [net, setNet] = useState(0);
   const [total, setTotal] = useState(0);
-
-  // const onChange = () => {
-  //   setPositive((prev) => (prev = !prev));
-  // };
-  // const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   const calculationForm = Yup.object().shape({
     income: Yup.number()
@@ -52,13 +47,6 @@ function Calculator() {
       : (calculatedMaxDays = DAYS);
     dailyIncome = (RATE * calculatedValues.income) / 30;
     setDailyIncome(dailyIncome);
-
-    // console.log(dailyIncome);
-    // console.log(calculatedMaxDays);
-    // console.log(calculatedValues.positive);
-    // console.log(calculatedMaxDays);
-    // console.log(calculatedValues.leave, "leave");
-    // console.log(calculatedValues.income, "income");
 
     if (calculatedValues.positive) {
       if (
@@ -102,12 +90,12 @@ function Calculator() {
     }
     setCalculaEmployerDays(employerDays);
     setCalculateInsuranceDays(insuranceDays);
-    seEmployerComp(employerDays * dailyIncome);
+    setEmployerComp(employerDays * dailyIncome);
     setInsuranceComp(insuranceDays * dailyIncome);
     setNet(employerDays + insuranceDays);
     setTotal(employerDays * dailyIncome + insuranceDays * dailyIncome);
   };
-  useEffect(() => {}, [net, calculateInsuranceDays]);
+  // useEffect(() => {}, [net, calculateInsuranceDays]);
   return (
     <div className="Calculator">
       <Formik
@@ -117,11 +105,6 @@ function Calculator() {
           positive: false,
         }}
         validationSchema={calculationForm}
-        // onSubmit={async (values, { resetForm }) => {
-        //   await sleep(500);
-        //   submitForm(values);
-        //   resetForm();
-        // }}
         onSubmit={(values, { resetForm }) => {
           submitForm(values);
           resetForm();
@@ -141,7 +124,9 @@ function Calculator() {
                 className="income-num income"
               />
               {errors.income && touched.income ? (
-                <div className="error">{errors.income}</div>
+                <div className="error" role="error1">
+                  {errors.income}
+                </div>
               ) : null}
             </div>
             <div className="input-wrapper">
@@ -156,7 +141,9 @@ function Calculator() {
               />
 
               {errors.leave && touched.leave ? (
-                <div className="error">{errors.leave}</div>
+                <div className="error" role="error2">
+                  {errors.leave}
+                </div>
               ) : null}
             </div>
             <div className="checkbox-wrapper">
