@@ -7,11 +7,11 @@ Story
 As a user, I want to calculate my sick-leave health insurance compensation so that I can
 double check my compensation sum.
 Acceptance criteria
-# I can enter my monthly gross income
-# I can enter my total days of sick-leave
-# I can specify that I have tubercolosis
-# I can see how much will my employer compensate me
-# I can see how many days my employer has to compensate
-# I can see how much will Health Insurance compensate me
-# I can see how many days Health Insurance has to compensate
-# I can see how much my compensation total will be
+### I can enter my monthly gross income
+### I can enter my total days of sick-leave
+### I can specify that I have tubercolosis
+### I can see how much will my employer compensate me
+### I can see how many days my employer has to compensate
+### I can see how much will Health Insurance compensate me
+### I can see how many days Health Insurance has to compensate
+### I can see how much my compensation total will be
